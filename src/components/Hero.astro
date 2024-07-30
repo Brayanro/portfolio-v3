@@ -1,0 +1,30 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<div class="flex flex-col lg:flex-row items-center gap-6">
+  <img
+    class="rounded-full shadow-lg size-52 lg:size-96 lg:order-2"
+    src="/photo.webp"
+    alt="personalImageAlt"
+  />
+  <article>
+    <h1
+      class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+    >
+      Hola, soy Brayan Rodriguez Montealegre
+    </h1>
+    <p
+      class="mt-6 text-2xl text-gray-800 dark:[&>strong]:text-[#3B82F6] [&>strong]:text-[#3B82F6] [&>strong]:font-semibold dark:text-gray-300"
+    >
+      +2 años de experiencia. <strong
+        >Ingeniero de Software, Desarrollador Frontend</strong
+      > de Neiva, Colombia. Especializado en el desarrollo de aplicaciones web únicas.
+    </p>
+    <div class="mt-4">
+      <Button text="Contactame" />
+      <Button text="LinkedIn" />
+      <Button text="Github" />
+    </div>
+  </article>
+</div>
