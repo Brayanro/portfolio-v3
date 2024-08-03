@@ -1,0 +1,50 @@
+---
+import AzureIcon from "../components/icons/Azure.astro";
+import BootstrapIcon from "../components/icons/Bootstrap.astro";
+import CSharpIcon from "../components/icons/CSharp.astro";
+import CSSIcon from "../components/icons/CSS.astro";
+import FigmaIcon from "../components/icons/Figma.astro";
+import FirebaseIcon from "../components/icons/Firebase.astro";
+import GitIcon from "../components/icons/Git.astro";
+import HTMLIcon from "../components/icons/HTML.astro";
+import JavaScriptIcon from "../components/icons/JavaScript.astro";
+import MaterialUIIcon from "../components/icons/MaterialUI.astro";
+import NextJSIcon from "../components/icons/NextJS.astro";
+import ReactIcon from "../components/icons/React.astro";
+import ReduxIcon from "../components/icons/Redux.astro";
+import SQLServerIcon from "../components/icons/SQLServer.astro";
+import TailwindCSSIcon from "../components/icons/TailwindCSS.astro";
+import TauriIcon from "../components/icons/Tauri.astro";
+import TypeScriptIcon from "../components/icons/TypeScript.astro";
+// import TauriIcon from "../components/icons/Tauri.astro";
+
+const SKILLS = [
+  { name: "React", component: ReactIcon },
+  { name: "TypeScript", component: TypeScriptIcon },
+  { name: "JavaScript", component: JavaScriptIcon },
+  { name: "Git", component: GitIcon },
+  { name: "Redux", component: ReduxIcon },
+  { name: "NextJS", component: NextJSIcon },
+  { name: "TailwindCSS", component: TailwindCSSIcon },
+  { name: "SQLServer", component: SQLServerIcon },
+  { name: "Azure", component: AzureIcon },
+  { name: "Bootstrap", component: BootstrapIcon },
+  { name: "C#", component: CSharpIcon },
+  { name: "CSS3", component: CSSIcon },
+  { name: "Figma", component: FigmaIcon },
+  { name: "Firebase", component: FirebaseIcon },
+  { name: "HTML5", component: HTMLIcon },
+  { name: "MaterialUI", component: MaterialUIIcon },
+  { name: "Tauri", component: TauriIcon },
+];
+---
+
+<div class="flex flex-wrap justify-center gap-10 mt-12">
+  {SKILLS.map(skill => (
+    <div class="flex flex-col gap-2">
+      <skill.component class="size-24 hover:scale-125 hover:transition-all hover:duration-200" />
+      <span class="text-white font-medium text-center">{skill.name}</span>
+    </div>
+  ))}
+
+</div>
