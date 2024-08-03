@@ -1,17 +1,23 @@
 ---
 import Button from "../components/Button.astro";
+import Email from "./icons/Email.astro";
+import GitHub from "./icons/GitHub.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+// import GitHub from "./icons/GitHub.astro";
 ---
 
-<div class="flex flex-col lg:flex-row items-center gap-6">
-  <img
-    class="rounded-full shadow-lg size-52 lg:size-96 lg:order-2"
-    src="/photo.webp"
-    alt="personalImageAlt"
-  />
-  <article>
-    <h1
-      class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-    >
+<div class="flex flex-col lg:flex-row gap-6 items-center">
+  <picture
+    class="bg-[#60a9c2] rounded-full w-52 h-52 md:w-[350px] md:h-[350px] lg:order-2 overflow-hidden"
+  >
+    <img
+      class="w-full h-full object-cover"
+      src="/photo.webp"
+      alt="personalImageAlt"
+    />
+  </picture>
+  <article class="lg:w-[530px]">
+    <h1 class="font-bold tracking-tight text-gray-800 text-5xl dark:text-white">
       Hola, soy Brayan Rodriguez Montealegre
     </h1>
     <p
@@ -21,10 +27,19 @@ import Button from "../components/Button.astro";
         >Ingeniero de Software, Desarrollador Frontend</strong
       > de Neiva, Colombia. Especializado en el desarrollo de aplicaciones web únicas.
     </p>
-    <div class="mt-4">
-      <Button text="Contactame" />
-      <Button text="LinkedIn" />
-      <Button text="Github" />
+    <div class="mt-4 flex flex-wrap gap-4">
+      <Button href="mailto:brayan7890123@gmail.com">
+        <Email class="size-7" />
+        Contáctame
+      </Button>
+      <Button href="https://www.linkedin.com/in/brayanromon">
+        <LinkedIn class="size-5" />
+        LinkedIn
+      </Button>
+      <Button href="https://github.com/Brayanro">
+        <GitHub class="size-5" />
+        GitHub
+      </Button>
     </div>
   </article>
 </div>

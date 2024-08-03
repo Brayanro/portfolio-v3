@@ -1,0 +1,31 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    title: "Junior Developer L1",
+    company: "Indigo Technologies LATAM",
+    date: "Enero 2024 - Actualmente",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos odio animi obcaecati saepe similique maxime facilis illo soluta, sit nostrum molestiae ullam corrupti explicabo nam et officia! Ea, beatae voluptatibus!",
+  },
+  {
+    title: "Desarrollador frontend",
+    company: "Kaba Law Group",
+    date: "Abril 2023 - Enero 2024",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos odio animi obcaecati saepe similique maxime facilis illo soluta, sit nostrum molestiae ullam corrupti explicabo nam et officia! Ea, beatae voluptatibus!",
+  },
+  {
+    title: "Pasante de ingeniería de software",
+    company: "Editorial Universidad Surcolombiana",
+    date: "Septiembre 2022 - Marzo 2023",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos odio animi obcaecati saepe similique maxime facilis illo soluta, sit nostrum molestiae ullam corrupti explicabo nam et officia! Ea, beatae voluptatibus!",
+  },
+];
+---
+
+<ol class="relative border-s-2 border-gray-200 dark:border-gray-600 mt-12">
+  {EXPERIENCE.map((experience) => <ExperienceItem {...experience} />)}
+</ol>

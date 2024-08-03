@@ -1,5 +1,9 @@
+---
+import Sun from "./icons/Sun.astro";
+---
+
 <footer
-  class="opacity-90 m-4 px-4 md:px-0 w-full mx-auto container md:max-w-2xl lg:max-w-4xl flex justify-center"
+  class="opacity-90 m-4 px-4 md:px-0 w-full mx-auto container md:max-w-2xl lg:max-w-4xl flex justify-center mt-12"
 >
   <div
     class="w-full max-w-screen-xl mx-auto flex flex-col gap-2 md:gap-0 md:flex-row md:items-center md:justify-between py-4"
@@ -12,10 +16,16 @@
         target="_blank">Brayan Rodriguez Montealegre</a
       >.
     </span>
-    <a
-      id="contacto"
-      href="mailto:brayan7890123@gmail.com"
-      class="hover:underline text-sm">Contacto</a
-    >
+    <div class="flex flex-col md:flex-row md:items-center md:gap-2">
+      <a
+        id="contacto"
+        href="mailto:brayan7890123@gmail.com"
+        rel="noopener noreferrer"
+        class="hover:underline text-sm">Contacto</a
+      >
+      <button>
+        <Sun class="size-6 ml-2 hover:scale-110" />
+      </button>
+    </div>
   </div>
 </footer>
