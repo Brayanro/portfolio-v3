@@ -1,0 +1,42 @@
+---
+import Button from "./Button.astro";
+import Download from "./icons/Download.astro";
+---
+
+<article
+  class="flex flex-col items-center gap-8 text-gray-700 dark:text-gray-300 lg:flex-row mt-12"
+>
+  <div
+    class="[&>p]:mb-4 [&>p>strong]:text-[#3B82F6] text-pretty order-2 md:order-1 lg:w-[600px]"
+  >
+    <p>
+      Me llamo Brayan Rodriguez Montealegre. <strong
+        >Soy ingeniero de software y desarrollador frontend</strong
+      >, comprometido con el aprendizaje continuo y la escritura de código
+      limpio y reutilizable. Me apasiona aplicar las mejores prácticas de
+      experiencia de usuario, creando interfaces atractivas, modernas y
+      responsivas. Mi capacidad de adaptación a diversas circunstancias y mi
+      constante búsqueda de retos me permiten mejorar día a día.
+    </p>
+    <p>
+      En mi tiempo libre, valoro mucho pasar momentos con mi familia y amigos.
+      Además, disfruto de ir al gimnasio, lo que me ayuda a mantenerme activo y
+      equilibrado. Mi objetivo es seguir creciendo como profesional y como
+      persona, siempre buscando nuevas oportunidades para aprender y
+      desarrollarme.
+    </p>
+    <Button href="https://www.linkedin.com/in/brayanromon">
+      <Download class="size-7" />
+      Descargar CV
+    </Button>
+  </div>
+  <picture
+    class="bg-[#60a9c2] rounded-md w-52 h-52 md:w-[350px] md:h-[300px] lg:order-2 overflow-hidden"
+  >
+    <img
+      class="w-full h-full object-cover"
+      src="/photo.webp"
+      alt="Brayan Rodriguez Montealegre"
+    />
+  </picture>
+</article>
