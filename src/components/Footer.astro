@@ -1,14 +1,15 @@
 ---
 import Sun from "./icons/Sun.astro";
+import Moon from "./icons/Moon.astro";
 ---
 
 <footer
-  class="opacity-90 m-4 px-4 md:px-0 w-full mx-auto container md:max-w-2xl lg:max-w-4xl flex justify-center mt-12"
+  class="opacity-90 px-4 md:px-0 w-full mx-auto container md:max-w-2xl lg:max-w-4xl flex justify-center mt-12"
 >
   <div
     class="w-full max-w-screen-xl mx-auto flex flex-col gap-2 md:gap-0 md:flex-row md:items-center md:justify-between py-4"
   >
-    <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
+    <span class="text-sm sm:text-center text-gray-900/90 dark:text-zinc-200/90"
       >Hecho con ❤️ por
       <a
         href="https://www.linkedin.com/in/brayanromon"
@@ -16,16 +17,89 @@ import Sun from "./icons/Sun.astro";
         target="_blank">Brayan Rodriguez Montealegre</a
       >.
     </span>
-    <div class="flex flex-col md:flex-row md:items-center md:gap-2">
+    <div class="flex flex-col md:flex-row md:items-center gap-2">
       <a
         id="contacto"
         href="mailto:brayan7890123@gmail.com"
         rel="noopener noreferrer"
-        class="hover:underline text-sm">Contacto</a
+        class="hover:underline text-sm text-gray-900/90 dark:text-zinc-200/90">Contacto</a
       >
-      <button>
-        <Sun class="size-6 ml-2 hover:scale-110" />
+      <button id="toggle-icon-button" class="relative flex items-center" name="toggle-icon-button">
+        <Sun
+          id="sun-icon"
+          class="size-7 ml-2 hover:scale-110 icon-transition hidden-icon"
+        />
+        <Moon
+          id="moon-icon"
+          class="size-7 ml-2 hover:scale-110 icon-transition hidden-icon stroke-gray-600"
+        />
       </button>
     </div>
   </div>
 </footer>
+
+<style>
+  .icon-transition {
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .hidden-icon {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  .visible-icon {
+    opacity: 1;
+    position: static;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("toggle-icon-button");
+    const sunIcon = document.getElementById("sun-icon");
+    const moonIcon = document.getElementById("moon-icon");
+
+    function applyTheme(theme: string) {
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+        if (sunIcon && moonIcon) {
+          sunIcon.classList.remove("hidden-icon");
+          sunIcon.classList.add("visible-icon");
+          moonIcon.classList.remove("visible-icon");
+          moonIcon.classList.add("hidden-icon");
+        }
+      } else {
+        document.documentElement.classList.remove("dark");
+        if (sunIcon && moonIcon) {
+          sunIcon.classList.remove("visible-icon");
+          sunIcon.classList.add("hidden-icon");
+          moonIcon.classList.remove("hidden-icon");
+          moonIcon.classList.add("visible-icon");
+        }
+      }
+    }
+
+    function getPreferredTheme() {
+      const storedTheme = localStorage.getItem("theme");
+      if (storedTheme) {
+        return storedTheme;
+      }
+      const userMedia = window.matchMedia("(prefers-color-scheme: dark)");
+      if (userMedia.matches) {
+        return "dark";
+      }
+      return "light";
+    }
+
+    let currentTheme = getPreferredTheme();
+    applyTheme(currentTheme);
+
+    button?.addEventListener("click", () => {
+      currentTheme = currentTheme === "dark" ? "light" : "dark";
+      localStorage.setItem("theme", currentTheme);
+      applyTheme(currentTheme);
+    });
+  });
+</script>
