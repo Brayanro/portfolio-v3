@@ -17,18 +17,18 @@ const navItems = [
   },
   {
     title: "Sobre mí",
-    label: "about",
-    url: "/#about",
+    label: "about-me",
+    url: "/#about-me",
   },
 ];
 ---
 
 <header class="w-full flex justify-center fixed z-10 mt-2">
-  <nav class="p-3 rounded-full flex flex-wrap">
+  <nav class="p-3 text-gray-800 dark:text-white rounded-full flex flex-wrap">
     {
       navItems.map((link) => (
         <a
-          class="px-2 py-2 transition text-gray-800 dark:text-white hover:text-[#3B82F6] font-medium text-sm md:text-base"
+          class="px-2 py-2 transition hover:text-[#3B82F6] font-medium text-sm md:text-base"
           aria-label={link.label}
           href={link.url}
         >
@@ -42,7 +42,7 @@ const navItems = [
 <script>
   document.addEventListener("astro:page-load", () => {
     const sections = document.querySelectorAll("section");
-    const navItems = document.querySelectorAll("nav a");
+    const navItems = document.querySelectorAll("header nav a");
 
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {

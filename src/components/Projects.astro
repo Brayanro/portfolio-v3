@@ -1,24 +1,46 @@
 ---
 import Card from "./Card.astro";
+
+const PROJECTS = [
+  {
+    title: "Clon de Youtube",
+    description:
+      "Aplicación que permite a los usuarios buscar y reproducir videos, acceder a detalles del video como vistas y likes, explorar videos del canal seleccionado, y buscar videos por categorías. Los datos se obtienen a través de la API RapidAPI YouTube v3, garantizando una integración fluida con contenido real.",
+    githubLink: "https://github.com/Brayanro/youtube-clone",
+    previewLink: "https://youtube-clone-vert-one.vercel.app/",
+    url: "/youtube.webp",
+    badges: ["React.js", "MaterialUI"],
+  },
+  {
+    title: "Aplicación de comidas",
+    description:
+      "Sitio donde los usuarios pueden explorar una amplia variedad de alimentos, agregar sus favoritos a una lista personalizada, y obtener información detallada sobre cualquier alimento seleccionado. La plataforma también incluye un buscador para encontrar rápidamente los alimentos de interés.",
+    githubLink: "https://github.com/Brayanro/meals-app",
+    previewLink: "https://brayanro.github.io/meals-app/",
+    url: "/meal.webp",
+    badges: ["React.js", "TailwindCSS"],
+  },
+  {
+    title: "Clon de Netflix",
+    description:
+      "Aplicación que utiliza la API de TMDB para obtener todos los datos sobre películas y series. La autenticación de usuarios se realiza a través de Firebase Authentication, permitiendo a los usuarios iniciar sesión y registrarse de manera segura. Además, Firestore se utiliza para almacenar las películas o series favoritas del usuario.",
+    githubLink: "https://github.com/Brayanro/Netflix-clone",
+    previewLink: "https://netflix-clone-react-7f61d.firebaseapp.com/",
+    url: "/netflix.webp",
+    badges: ["React.js", "Firebase", "TailwindCSS"],
+  },
+  {
+    title: "Aplicación del clima",
+    description:
+      "Aplicación del clima construida con HTML, CSS y JavaScript, usando la api de openweathermap, diseño hecho en Figma.",
+    githubLink: "https://github.com/Brayanro/Weather-App-JavaScript",
+    previewLink: "https://brayanro.github.io/Weather-App-JavaScript/",
+    url: "/weather.webp",
+    badges: ["JavaScript", "CSS"],
+  },
+];
 ---
 
 <div class="mt-12 flex flex-col gap-4">
-  <Card
-    title="Proyecto"
-    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium dicta culpa quasi laborum accusantium, iure excepturi molestiae aspernatur at sint fuga magni nisi? Deserunt autem fuga maxime molestiae reiciendis! Quis numquam reiciendis illum porro doloremque consequuntur voluptatem expedita eaque ab?"
-    githubLink="#"
-    previewLink="#"
-  />
-  <Card
-    title="Proyecto"
-    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium dicta culpa quasi laborum accusantium, iure excepturi molestiae aspernatur at sint fuga magni nisi? Deserunt autem fuga maxime molestiae reiciendis! Quis numquam reiciendis illum porro doloremque consequuntur voluptatem expedita eaque ab?"
-    githubLink="#"
-    previewLink="#"
-  />
-  <Card
-    title="Proyecto"
-    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium dicta culpa quasi laborum accusantium, iure excepturi molestiae aspernatur at sint fuga magni nisi? Deserunt autem fuga maxime molestiae reiciendis! Quis numquam reiciendis illum porro doloremque consequuntur voluptatem expedita eaque ab?"
-    githubLink="#"
-    previewLink="#"
-  />
+  {PROJECTS.map((project) => <Card {...project} />)}
 </div>
