@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Button from "./Button.astro";
 import Email from "./icons/Email.astro";
 import GitHub from "./icons/GitHub.astro";
@@ -6,14 +7,14 @@ import LinkedIn from "./icons/LinkedIn.astro";
 ---
 
 <div class="flex flex-col lg:flex-row gap-6 items-center">
-  <picture
-  class="bg-[#60a9c2] rounded-full lg:order-2 overflow-hidden"
-
-  >
-    <img
+  <picture class="bg-[#60a9c2] rounded-full lg:order-2 overflow-hidden">
+    <Image
+      width={300}
+      height={300}
       class="w-full h-full object-cover ml-4 md:ml-6"
       src="/memoji.webp"
       alt="Memoji Brayan Rodriguez Montealegre"
+      loading="eager"
     />
   </picture>
   <article class="lg:w-[530px]">

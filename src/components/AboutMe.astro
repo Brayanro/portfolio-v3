@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Download from "./icons/Download.astro";
 ---
 
@@ -36,7 +37,9 @@ import Download from "./icons/Download.astro";
   <picture
     class="bg-[#60a9c2] rounded-md w-52 h-52 md:w-[350px] md:h-[300px] lg:order-2 overflow-hidden"
   >
-    <img
+    <Image
+      width={300}
+      height={300}
       class="w-full h-full object-cover"
       src="/photo.webp"
       alt="Brayan Rodriguez Montealegre"
