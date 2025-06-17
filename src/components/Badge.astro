@@ -1,10 +1,11 @@
 ---
-import React from "./icons/React.astro";
-import Tailwind from "./icons/TailwindCSS.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+import CSS from "./icons/CSS.astro";
+import Firebase from "./icons/Firebase.astro";
 import JavaScript from "./icons/JavaScript.astro";
 import MaterialUI from "./icons/MaterialUI.astro";
-import Firebase from "./icons/Firebase.astro";
-import CSS from "./icons/CSS.astro";
+import React from "./icons/React.astro";
+import Tailwind from "./icons/TailwindCSS.astro";
 
 interface Props {
   name: string;
@@ -21,6 +22,7 @@ const iconsMap: Record<string, AstroComponent> = {
   MaterialUI: MaterialUI,
   Firebase: Firebase,
   CSS: CSS,
+  Astro: AstroIcon,
 };
 
 const IconComponent = iconsMap[name];

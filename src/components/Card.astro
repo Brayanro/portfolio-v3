@@ -8,7 +8,7 @@ import Link from "./icons/Link.astro";
 interface Props {
   title: string;
   description: string;
-  githubLink: string;
+  githubLink: string | null;
   previewLink: string;
   url: string;
   badges: string[];
@@ -44,10 +44,12 @@ const { title, description, previewLink, githubLink, url, badges } =
       <Button href={previewLink}>
         <Link class="size-5" />Ver
       </Button>
-      <Button href={githubLink}>
-        <GitHub class="size-5" />
-        Código
-      </Button>
+      {githubLink && (
+        <Button href={githubLink}>
+          <GitHub class="size-5" />
+          Código
+        </Button>
+      )}
     </div>
   </div>
 </article>
