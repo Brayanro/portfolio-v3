@@ -1,0 +1,24 @@
+<button
+  id="scrollToTopBtn"
+  aria-label="Ir al inicio"
+  class="fixed bottom-6 right-6 z-50 p-3 rounded-md bg-[#60a9c2] text-white shadow-lg transition-opacity duration-300 hover:bg-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#3B82F6] dark:bg-[#3B82F6] dark:hover:bg-[#60a9c2] opacity-0 pointer-events-none md:bottom-8 md:right-8"
+  onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+  </svg>
+</button>
+<script>
+  const btn = document.getElementById('scrollToTopBtn');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        btn.classList.remove('opacity-0', 'pointer-events-none');
+        btn.classList.add('opacity-100');
+      } else {
+        btn.classList.add('opacity-0', 'pointer-events-none');
+        btn.classList.remove('opacity-100');
+      }
+    });
+  }
+</script> 

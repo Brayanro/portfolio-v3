@@ -1,7 +1,8 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 import Footer from "@components/Footer.astro";
 import Navbar from "@components/Navbar.astro";
+import ScrollToTop from "@components/ScrollToTop.astro";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -25,6 +26,7 @@ const { title, description } = Astro.props;
   <body>
     <Navbar />
     <slot />
+    <ScrollToTop />
     <Footer />
   </body>
 </html>
