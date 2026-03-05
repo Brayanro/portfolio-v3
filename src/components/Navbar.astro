@@ -1,21 +1,25 @@
 ---
 const navItems = [
   {
+    i18nKey: "nav.experience",
     title: "Experiencia",
     label: "experience",
     url: "/#experience",
   },
   {
+    i18nKey: "nav.projects",
     title: "Proyectos",
     label: "projects",
     url: "/#projects",
   },
   {
+    i18nKey: "nav.skills",
     title: "Habilidades",
     label: "skills",
     url: "/#skills",
   },
   {
+    i18nKey: "nav.aboutMe",
     title: "Sobre mí",
     label: "about-me",
     url: "/#about-me",
@@ -24,23 +28,33 @@ const navItems = [
 ---
 
 <header class="w-full flex justify-center fixed z-10 mt-2">
-  <nav class="p-3 text-gray-800 dark:text-white rounded-full flex flex-wrap">
+  <nav class="p-3 text-gray-800 dark:text-white rounded-full flex items-center gap-0.5">
     {
       navItems.map((link) => (
         <a
-          class="px-2 py-2 transition hover:text-[#3B82F6] font-medium text-sm md:text-base"
+          class="px-1 py-2 transition hover:text-[#3B82F6] font-medium text-xs md:text-base md:px-2 whitespace-nowrap"
           aria-label={link.label}
           href={link.url}
+          data-i18n={link.i18nKey}
         >
           {link.title}
         </a>
       ))
     }
+    <button
+      id="language-selector"
+      aria-label="Toggle language"
+      class="ml-1 px-2 py-1 text-xs md:text-sm font-medium rounded-md text-gray-800 dark:text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#3B82F6] transition hover:text-[#3B82F6] flex items-center gap-0.5"
+    >
+      <span id="lang-es" class="lang-option">ES</span>
+      <span class="text-gray-400 dark:text-gray-500">/</span>
+      <span id="lang-en" class="lang-option">EN</span>
+    </button>
   </nav>
 </header>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
+  document.addEventListener("astro:page-load", async () => {
     const sections = document.querySelectorAll("section");
     const navItems = document.querySelectorAll("header nav a");
 
@@ -78,6 +92,38 @@ const navItems = [
         });
       }
     };
+
+    // Language selector
+    const langBtn = document.getElementById("language-selector");
+    const langEs = document.getElementById("lang-es");
+    const langEn = document.getElementById("lang-en");
+    if (langBtn && langEs && langEn) {
+      const { getLocale, setLocale } = await import("@i18n/index");
+
+      function updateLangUI(locale: string) {
+        const es = langEs!;
+        const en = langEn!;
+        if (locale === "es") {
+          es.classList.add("text-[#3B82F6]", "font-bold");
+          es.classList.remove("opacity-50");
+          en.classList.remove("text-[#3B82F6]", "font-bold");
+          en.classList.add("opacity-50");
+        } else {
+          en.classList.add("text-[#3B82F6]", "font-bold");
+          en.classList.remove("opacity-50");
+          es.classList.remove("text-[#3B82F6]", "font-bold");
+          es.classList.add("opacity-50");
+        }
+      }
+
+      updateLangUI(getLocale());
+
+      langBtn.addEventListener("click", () => {
+        const newLocale = getLocale() === "es" ? "en" : "es";
+        setLocale(newLocale);
+        updateLangUI(newLocale);
+      });
+    }
   });
 </script>
 
@@ -92,5 +138,9 @@ const navItems = [
     to {
       @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
     }
+  }
+
+  .lang-option {
+    transition: all 0.2s ease;
   }
 </style>

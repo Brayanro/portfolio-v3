@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "Brayan Rodriguez Montealegre | Software Engineer | Frontend Developer",
+    "description": "Portfolio of a Software Engineer specialized in frontend development. Discover my projects, skills, and experience building modern and efficient web applications."
+  },
+  "nav": {
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "aboutMe": "About me"
+  },
+  "hero": {
+    "title": "Hi, I'm Brayan",
+    "description": "+2 years of experience. <strong>Software Engineer, Frontend Developer</strong> from Neiva, Colombia. Specialized in building unique web applications.",
+    "contact": "Contact me"
+  },
+  "sections": {
+    "experience": "Work experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "aboutMe": "About me"
+  },
+  "experience": {
+    "items": [
+      {
+        "title": "Frontend Developer",
+        "company": "Indigo Technologies LATAM",
+        "date": "January 2024 - Present",
+        "description": [
+          "Migrated legacy React code to functional components with hooks, improving scalability and reducing maintenance by 30%.",
+          "Optimized the UI by 40% using Web Workers to improve fluidity in heavy tasks.",
+          "Built a desktop application with Tauri, React.js, TypeScript, Rust, and Tailwind CSS for DICOM image analysis, optimizing resource consumption.",
+          "Developed an application with Next.js using Zustand for state management, React Query for data fetching, Zod for validations, Server Components, Server Actions, and applying Screaming Architecture, achieving a more efficient and scalable structure.",
+          "Deployed applications with Docker and Kubernetes on Azure Kubernetes Service (AKS), reducing infrastructure costs by approximately 30% when migrating from App Service Windows.",
+          "Implemented frontend and backend application monitoring with New Relic, and performed load and concurrency testing with Grafana K6, identifying and resolving critical bugs and bottlenecks."
+        ]
+      },
+      {
+        "title": "Frontend Developer",
+        "company": "Kaba Law Group",
+        "date": "April 2023 - January 2024",
+        "description": [
+          "Developed web apps with Next.js, TypeScript, Redux Toolkit, and Tailwind CSS.",
+          "Created pixel-perfect interfaces from Figma designs with Tailwind CSS.",
+          "Integrated REST APIs and real-time communication with WebSockets.",
+          "Refactored code, improving system efficiency and stability."
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "items": [
+      {
+        "title": "Youtube Clone",
+        "description": "Application that allows users to search and play videos, access video details such as views and likes, explore videos from the selected channel, and search videos by categories. Data is obtained through the RapidAPI YouTube v3 API, ensuring a seamless integration with real content."
+      },
+      {
+        "title": "Meals App",
+        "description": "Site where users can explore a wide variety of foods, add their favorites to a personalized list, and get detailed information about any selected food. The platform also includes a search feature to quickly find foods of interest."
+      },
+      {
+        "title": "Netflix Clone",
+        "description": "Application that uses the TMDB API to get all data about movies and series. User authentication is done through Firebase Authentication, allowing users to sign in and register securely. Additionally, Firestore is used to store the user's favorite movies or series."
+      },
+      {
+        "title": "Gym Landing Page",
+        "description": "Gym landing page built with Astro, React.js, TailwindCSS, and JavaScript. Optimized for SEO, accessibility, and performance."
+      }
+    ]
+  },
+  "about": {
+    "p1Start": "My name is Brayan Rodriguez Montealegre. ",
+    "p1Strong": "I'm a software engineer and frontend developer",
+    "p1End": ", committed to continuous learning and writing clean, reusable code. I'm passionate about applying best user experience practices, creating attractive, modern, and responsive interfaces. My ability to adapt to diverse circumstances and my constant pursuit of challenges allow me to improve every day.",
+    "p2": "In my free time, I greatly value spending moments with my family and friends. I also enjoy going to the gym, which helps me stay active and balanced. My goal is to continue growing as a professional and as a person, always looking for new opportunities to learn and develop.",
+    "downloadCv": "Download CV"
+  },
+  "footer": {
+    "madeWith": "Made with ❤️ by",
+    "contact": "Contact"
+  },
+  "scrollToTop": {
+    "ariaLabel": "Scroll to top"
+  },
+  "card": {
+    "view": "View",
+    "code": "Code"
+  }
+}

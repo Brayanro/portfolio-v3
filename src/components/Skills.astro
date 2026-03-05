@@ -22,39 +22,127 @@ import VitestIcon from "./icons/Vitest.astro";
 import ZustandIcon from "./icons/Zustand.astro";
 
 const SKILLS = [
-  { name: "React.js", component: ReactIcon },
-  { name: "NextJS", component: NextJSIcon },
-  { name: "TypeScript", component: TypeScriptIcon },
-  { name: "Vitest", component: VitestIcon },
-  { name: "Redux Toolkit", component: ReduxIcon },
-  { name: "Zustand", component: ZustandIcon },
-  { name: "React Query", component: ReactQueryIcon },
-  { name: "TailwindCSS", component: TailwindCSSIcon },
-  { name: "MaterialUI", component: MaterialUIIcon },
-  { name: "Tauri", component: TauriIcon },
-  { name: "Docker", component: DockerIcon },
-  { name: "Kubernetes", component: KubernetesIcon },
-  { name: "Azure", component: AzureIcon },
-  { name: "Git", component: GitIcon },
-  { name: "JavaScript", component: JavaScriptIcon },
-  { name: "C#", component: CSharpIcon },
-  { name: ".Net", component: DotNetIcon },
-  { name: "Bootstrap", component: BootstrapIcon },
-  { name: "CSS3", component: CSSIcon },
-  { name: "HTML5", component: HTMLIcon },
-  { name: "Firebase", component: FirebaseIcon },
+  { name: "React.js", component: ReactIcon, color: "rgba(97, 218, 251, 0.5)" },
+  { name: "NextJS", component: NextJSIcon, color: "rgba(255, 255, 255, 0.3)" },
+  { name: "TypeScript", component: TypeScriptIcon, color: "rgba(49, 120, 198, 0.5)" },
+  { name: "Vitest", component: VitestIcon, color: "rgba(114, 155, 27, 0.5)" },
+  { name: "Redux", component: ReduxIcon, color: "rgba(118, 74, 188, 0.5)" },
+  { name: "Zustand", component: ZustandIcon, color: "rgba(255, 255, 255, 0.3)" },
+  { name: "React Query", component: ReactQueryIcon, color: "rgba(255, 65, 84, 0.5)" },
+  { name: "Tailwind", component: TailwindCSSIcon, color: "rgba(56, 189, 248, 0.5)" },
+  { name: "MaterialUI", component: MaterialUIIcon, color: "rgba(0, 127, 255, 0.5)" },
+  { name: "Tauri", component: TauriIcon, color: "rgba(255, 193, 49, 0.5)" },
+  { name: "Docker", component: DockerIcon, color: "rgba(36, 150, 237, 0.5)" },
+  { name: "Kubernetes", component: KubernetesIcon, color: "rgba(50, 108, 229, 0.5)" },
+  { name: "Azure", component: AzureIcon, color: "rgba(0, 137, 214, 0.5)" },
+  { name: "Git", component: GitIcon, color: "rgba(240, 80, 50, 0.5)" },
+  { name: "JavaScript", component: JavaScriptIcon, color: "rgba(247, 223, 30, 0.5)" },
+  { name: "C#", component: CSharpIcon, color: "rgba(35, 145, 32, 0.5)" },
+  { name: ".Net", component: DotNetIcon, color: "rgba(81, 43, 212, 0.5)" },
+  { name: "Bootstrap", component: BootstrapIcon, color: "rgba(121, 82, 179, 0.5)" },
+  { name: "CSS3", component: CSSIcon, color: "rgba(21, 114, 182, 0.5)" },
+  { name: "HTML5", component: HTMLIcon, color: "rgba(227, 79, 38, 0.5)" },
+  { name: "Firebase", component: FirebaseIcon, color: "rgba(255, 202, 40, 0.5)" },
 ];
 ---
 
-<div class="flex flex-wrap justify-center gap-10 mt-12">
+<div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6 mt-12 w-full mx-auto pb-4">
   {
-    SKILLS.map((skill) => (
-      <div class="flex flex-col gap-2">
-        <skill.component class="size-24 hover:scale-125 hover:transition-all hover:duration-200" />
-        <span class="text-gray-800 dark:text-gray-300 font-medium text-center">
+    SKILLS.map((skill, index) => (
+      <div 
+        class="skill-card group relative flex flex-col items-center justify-center gap-3 p-4 md:p-5 rounded-2xl bg-white/5 dark:bg-gray-900/40 border border-gray-200/50 dark:border-white/5 overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:border-gray-300 dark:hover:border-white/10"
+        style={`--glow-color: ${skill.color}; --delay: ${index * 50}ms;`}
+      >
+        <div class="glow-effect absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        
+        <div class="icon-wrapper relative z-10 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+          <skill.component class="size-10 md:size-12 lg:size-14 transition-all duration-500 drop-shadow-md" />
+        </div>
+        
+        <span class="relative z-10 text-xs md:text-sm text-gray-500 dark:text-gray-400 font-medium text-center transition-colors duration-500 group-hover:text-gray-900 dark:group-hover:text-white">
           {skill.name}
         </span>
       </div>
     ))
   }
 </div>
+
+<script>
+  // Mouse tracking for spotlight glow effect
+  document.addEventListener("astro:page-load", () => {
+    const grid = document.getElementById("skills-grid");
+    const cards = document.querySelectorAll(".skill-card");
+
+    if (grid) {
+      grid.addEventListener("mousemove", (e) => {
+        for (const card of cards) {
+          const rect = (card as HTMLElement).getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          (card as HTMLElement).style.setProperty("--mouse-x", `${x}px`);
+          (card as HTMLElement).style.setProperty("--mouse-y", `${y}px`);
+        }
+      });
+    }
+
+    // Scroll reveal animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+    cards.forEach((card) => {
+      observer.observe(card);
+    });
+  });
+</script>
+
+<style>
+  .skill-card {
+    /* Spotlight glow gradient that tracks mouse position */
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .skill-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+                border-color 0.5s ease,
+                box-shadow 0.5s ease;
+    transition-delay: var(--delay);
+  }
+
+  .glow-effect {
+    background: radial-gradient(
+      150px circle at var(--mouse-x) var(--mouse-y), 
+      var(--glow-color),
+      transparent 40%
+    );
+    z-index: 0;
+  }
+
+  /* When moving card on hover, ensure transition overrides the reveal transform */
+  .skill-card.visible:hover {
+    transform: translateY(-4px);
+    transition-delay: 0s; /* No delay on hover */
+  }
+
+  @media (max-width: 640px) {
+    .glow-effect {
+      /* Softer/larger glow on mobile since hover isn't precise */
+      background: radial-gradient(
+        100px circle at center, 
+        var(--glow-color),
+        transparent 50%
+      );
+    }
+  }
+</style>

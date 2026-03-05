@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "Brayan Rodriguez Montealegre | Ingeniero de Software | Desarrollador Frontend",
+    "description": "Portafolio de un Ingeniero de Software especializado en desarrollo frontend. Descubre mis proyectos, habilidades y experiencia en la creación de aplicaciones web modernas y eficientes."
+  },
+  "nav": {
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "aboutMe": "Sobre mí"
+  },
+  "hero": {
+    "title": "Hola, soy Brayan",
+    "description": "+2 años de experiencia. <strong>Ingeniero de Software, Desarrollador Frontend</strong> de Neiva, Colombia. Especializado en desarrollar aplicaciones web únicas.",
+    "contact": "Contáctame"
+  },
+  "sections": {
+    "experience": "Experiencia laboral",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "aboutMe": "Sobre mi"
+  },
+  "experience": {
+    "items": [
+      {
+        "title": "Desarrollador Frontend",
+        "company": "Indigo Technologies LATAM",
+        "date": "Enero 2024 - Actualmente",
+        "description": [
+          "Migré código legacy en React a componentes funcionales con hooks, mejorando la escalabilidad y reduciendo mantenimiento en un 30%.",
+          "Optimicé la UI en un 40% usando Web Workers para mejorar la fluidez en tareas pesadas.",
+          "Construí una aplicación de escritorio con Tauri, React.js, TypeScript, Rust y Tailwind CSS para análisis de imágenes DICOM, optimizando el consumo de recursos.",
+          "Desarrollé una aplicación con Next.js utilizando Zustand para gestión de estado, React Query para fetching de datos, Zod para validaciones, Server Components, Server Actions y aplicando Screaming Architecture, logrando una estructura más eficiente y escalable.",
+          "Desplegué aplicaciones con Docker y Kubernetes en Azure Kubernetes Service (AKS), reduciendo costos de infraestructura en aproximadamente un 30% al migrar desde App Service Windows.",
+          "Implementé monitoreo de aplicaciones frontend y backend con New Relic, y realicé pruebas de carga y concurrencia con Grafana K6, identificando y resolviendo bugs y cuellos de botella críticos."
+        ]
+      },
+      {
+        "title": "Desarrollador Frontend",
+        "company": "Kaba Law Group",
+        "date": "Abril 2023 - Enero 2024",
+        "description": [
+          "Desarrollé apps web con Next.js, TypeScript, Redux Toolkit y Tailwind CSS.",
+          "Maqueté interfaces pixel perfect desde Figma con Tailwind CSS.",
+          "Integré APIs REST y comunicación en tiempo real con WebSockets.",
+          "Refactoricé código, mejorando la eficiencia y estabilidad del sistema."
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "items": [
+      {
+        "title": "Clon de Youtube",
+        "description": "Aplicación que permite a los usuarios buscar y reproducir videos, acceder a detalles del video como vistas y likes, explorar videos del canal seleccionado, y buscar videos por categorías. Los datos se obtienen a través de la API RapidAPI YouTube v3, garantizando una integración fluida con contenido real."
+      },
+      {
+        "title": "Aplicación de comidas",
+        "description": "Sitio donde los usuarios pueden explorar una amplia variedad de alimentos, agregar sus favoritos a una lista personalizada, y obtener información detallada sobre cualquier alimento seleccionado. La plataforma también incluye un buscador para encontrar rápidamente los alimentos de interés."
+      },
+      {
+        "title": "Clon de Netflix",
+        "description": "Aplicación que utiliza la API de TMDB para obtener todos los datos sobre películas y series. La autenticación de usuarios se realiza a través de Firebase Authentication, permitiendo a los usuarios iniciar sesión y registrarse de manera segura. Además, Firestore se utiliza para almacenar las películas o series favoritas del usuario."
+      },
+      {
+        "title": "Landing Page de Gimnasio",
+        "description": "Landing page de un gimnasio construida con Astro, React.js, TailwindCSS y JavaScript. Con optimización para SEO, accesibilidad y performance."
+      }
+    ]
+  },
+  "about": {
+    "p1Start": "Me llamo Brayan Rodriguez Montealegre. ",
+    "p1Strong": "Soy ingeniero de software y desarrollador frontend",
+    "p1End": ", comprometido con el aprendizaje continuo y la escritura de código limpio y reutilizable. Me apasiona aplicar las mejores prácticas de experiencia de usuario, creando interfaces atractivas, modernas y responsivas. Mi capacidad de adaptación a diversas circunstancias y mi constante búsqueda de retos me permiten mejorar día a día.",
+    "p2": "En mi tiempo libre, valoro mucho pasar momentos con mi familia y amigos. Además, disfruto de ir al gimnasio, lo que me ayuda a mantenerme activo y equilibrado. Mi objetivo es seguir creciendo como profesional y como persona, siempre buscando nuevas oportunidades para aprender y desarrollarme.",
+    "downloadCv": "Descargar CV"
+  },
+  "footer": {
+    "madeWith": "Hecho con ❤️ por",
+    "contact": "Contacto"
+  },
+  "scrollToTop": {
+    "ariaLabel": "Ir al inicio"
+  },
+  "card": {
+    "view": "Ver",
+    "code": "Código"
+  }
+}

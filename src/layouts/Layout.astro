@@ -13,17 +13,24 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" id="html-root">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
+    <meta name="description" content={description} data-i18n-attr="content:meta.description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title data-i18n="meta.title">{title}</title>
     <ViewTransitions />
   </head>
   <body>
+    <script>
+      import { initI18n } from "@i18n/index";
+
+      document.addEventListener("astro:page-load", () => {
+        initI18n();
+      });
+    </script>
     <Navbar />
     <slot />
     <ScrollToTop />

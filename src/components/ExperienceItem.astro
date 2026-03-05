@@ -4,21 +4,23 @@ interface Props {
   company: string;
   date: string;
   description: string[];
+  index: number;
 }
 
-const { title, company, date, description } = Astro.props;
+const { title, company, date, description, index } = Astro.props;
+const prefix = `experience.items.${index}`;
 ---
 
 <li class="mb-10 ms-5">
   <span class="text-[#3B82F6] -left-[11.5px] absolute rounded-full text-6xl"
     >&bull;</span
   >
-  <h2 class="text-2xl font-bold text-[#3B82F6]">{title}</h2>
-  <h3 class="text-xl font-semibold text-gray-800 dark:text-white">{company}</h3>
-  <time class="mb-1 text-black dark:text-white/80 text-sm">{date}</time>
+  <h2 class="text-2xl font-bold text-[#3B82F6]" data-i18n={`${prefix}.title`}>{title}</h2>
+  <h3 class="text-xl font-semibold text-gray-800 dark:text-white" data-i18n={`${prefix}.company`}>{company}</h3>
+  <time class="mb-1 text-black dark:text-white/80 text-sm" data-i18n={`${prefix}.date`}>{date}</time>
   <ul class="ps-4 list-disc text-black dark:text-white space-y-1 marker:text-[#3B82F6]">
-    {description.map(item => (
-      <li>{item}</li>
+    {description.map((item, i) => (
+      <li data-i18n={`${prefix}.description.${i}`}>{item}</li>
     ))}
   </ul>  
 </li>

@@ -10,7 +10,7 @@ import Moon from "./icons/Moon.astro";
     class="w-full max-w-screen-xl mx-auto flex flex-col gap-2 md:gap-0 md:flex-row md:items-center md:justify-between py-4"
   >
     <span class="text-sm sm:text-center text-gray-900/90 dark:text-zinc-200/90"
-      >Hecho con ❤️ por
+      ><span data-i18n="footer.madeWith">Hecho con ❤️ por</span>
       <a
         href="https://www.linkedin.com/in/brayanromon"
         class="hover:underline"
@@ -22,7 +22,8 @@ import Moon from "./icons/Moon.astro";
         id="contacto"
         href="mailto:brayan7890123@gmail.com"
         rel="noopener noreferrer"
-        class="hover:underline text-sm text-gray-900/90 dark:text-zinc-200/90">Contacto</a
+        class="hover:underline text-sm text-gray-900/90 dark:text-zinc-200/90"
+        ><span data-i18n="footer.contact">Contacto</span></a
       >
       <button id="toggle-icon-button" class="relative flex items-center" aria-label="Toggle theme">
         <Sun
