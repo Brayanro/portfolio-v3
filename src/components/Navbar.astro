@@ -54,6 +54,15 @@ const navItems = [
 </header>
 
 <script>
+  const updateNavbar = () => {
+    const navbar = document.querySelector("header nav");
+    navbar?.classList.toggle("is-scrolled", window.scrollY >= 100);
+  };
+
+  window.addEventListener("scroll", updateNavbar, { passive: true });
+  document.addEventListener("astro:page-load", updateNavbar);
+  updateNavbar();
+
   document.addEventListener("astro:page-load", async () => {
     const sections = document.querySelectorAll("section");
     const navItems = document.querySelectorAll("header nav a");
@@ -129,25 +138,24 @@ const navItems = [
 
 <style>
   nav {
-    animation: nav-shadown 1s linear both;
-    animation-timeline: scroll();
-    animation-range: 0 100px;
     --nav-background: rgb(255 255 255 / 50%);
+    transition:
+      background-color 180ms ease,
+      backdrop-filter 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  nav.is-scrolled {
+    background-color: var(--nav-background);
+    backdrop-filter: blur(8px);
+    box-shadow:
+      0 0 0 1px rgb(255 255 255 / 10%),
+      0 10px 15px -3px rgb(0 0 0 / 10%),
+      0 4px 6px -4px rgb(0 0 0 / 10%);
   }
 
   :global(html.dark) nav {
     --nav-background: rgb(31 41 55 / 90%);
-  }
-
-  @keyframes nav-shadown {
-    to {
-      background-color: var(--nav-background);
-      backdrop-filter: blur(8px);
-      box-shadow:
-        0 0 0 1px rgb(255 255 255 / 10%),
-        0 10px 15px -3px rgb(0 0 0 / 10%),
-        0 4px 6px -4px rgb(0 0 0 / 10%);
-    }
   }
 
   .lang-option {
