@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Brayan Rodriguez Montealegre | Software Engineer | Frontend Developer",
-    "description": "Portfolio of a Software Engineer specialized in frontend development. Discover my projects, skills, and experience building modern and efficient web applications."
+    "title": "Brayan Rodriguez Montealegre | Semi Senior Frontend Developer",
+    "description": "Semi Senior Frontend Developer with 3+ years of experience in React, Next.js, and TypeScript. Specialized in frontend architecture, performance, testing, and observability."
   },
   "nav": {
     "experience": "Experience",
@@ -11,7 +11,7 @@
   },
   "hero": {
     "title": "Hi, I'm Brayan",
-    "description": "+2 years of experience. <strong>Software Engineer, Frontend Developer</strong> from Neiva, Colombia. Specialized in building unique web applications.",
+    "description": "3+ years of experience. <strong>Semi Senior Frontend Developer</strong> from Neiva, Colombia. Specialized in frontend architecture, performance, testing, and observability with React, Next.js, and TypeScript.",
     "contact": "Contact me"
   },
   "sections": {
@@ -23,16 +23,15 @@
   "experience": {
     "items": [
       {
-        "title": "Frontend Developer",
+        "title": "Semi Senior Frontend Developer",
         "company": "Indigo Technologies LATAM",
         "date": "January 2024 - Present",
         "description": [
-          "Migrated legacy React code to functional components with hooks, improving scalability and reducing maintenance by 30%.",
-          "Optimized the UI by 40% using Web Workers to improve fluidity in heavy tasks.",
-          "Built a desktop application with Tauri, React.js, TypeScript, Rust, and Tailwind CSS for DICOM image analysis, optimizing resource consumption.",
-          "Developed an application with Next.js using Zustand for state management, React Query for data fetching, Zod for validations, Server Components, Server Actions, and applying Screaming Architecture, achieving a more efficient and scalable structure.",
-          "Deployed applications with Docker and Kubernetes on Azure Kubernetes Service (AKS), reducing infrastructure costs by approximately 30% when migrating from App Service Windows.",
-          "Implemented frontend and backend application monitoring with New Relic, and performed load and concurrency testing with Grafana K6, identifying and resolving critical bugs and bottlenecks."
+          "Developed a new version of a medical imaging viewer with React and TypeScript, modernizing its architecture and user experience and reducing image loading times by approximately 40%. The product later received FDA approval.",
+          "Implemented unit tests with over 95% frontend coverage, as well as backend tests to increase reliability and reduce regressions.",
+          "Modernized the backend in C# and .NET, migrating it to .NET 10 and applying Clean Architecture and hexagonal architecture to improve maintainability, decoupling, and scalability.",
+          "Developed a new version of the patient portal and implemented observability with New Relic to monitor errors, performance, and production load times.",
+          "Deployed applications with Docker and Kubernetes on AKS, reducing infrastructure costs by approximately 30% compared with Windows App Service."
         ]
       },
       {
@@ -40,10 +39,9 @@
         "company": "Kaba Law Group",
         "date": "April 2023 - January 2024",
         "description": [
-          "Developed web apps with Next.js, TypeScript, Redux Toolkit, and Tailwind CSS.",
-          "Created pixel-perfect interfaces from Figma designs with Tailwind CSS.",
-          "Integrated REST APIs and real-time communication with WebSockets.",
-          "Refactored code, improving system efficiency and stability."
+          "Built responsive interfaces faithful to Figma designs with Next.js, React, TypeScript, Redux Toolkit, and Tailwind CSS, creating reusable components.",
+          "Integrated REST APIs and WebSockets for backend communication and real-time features.",
+          "Refactored existing components and flows to improve code maintainability, stability, and reuse."
         ]
       }
     ]
