@@ -19,7 +19,7 @@ This repository contains Brayan Rodriguez Montealegre's personal portfolio websi
 - Keep user-facing copy available in both locale files and use the existing `data-i18n` conventions when adding translatable content.
 - Use Tailwind utilities for layout and component styling. With Tailwind v4, utilities are emitted in CSS cascade layers: avoid unlayered global resets or rules that override utility spacing/layout. Prefer Tailwind Preflight for base resets; put intentional custom base rules in an appropriate CSS layer.
 - Preserve responsive behavior and both light and dark themes when changing styles.
-- Use the existing npm scripts: `npm run dev` for local development, `npm run build` for Astro validation and a production build, and `npm run preview` to preview the built site.
+- Use pnpm to run project scripts: `pnpm dev` for local development, `pnpm build` for Astro validation and a production build, and `pnpm preview` to preview the built site.
 
 ## Commit messages
 

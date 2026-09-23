@@ -18,12 +18,13 @@ Clone project
 
 Install dependencies
 ```
-  yarn install or npm install
+  corepack enable pnpm
+  pnpm install
 ```
 
 Run proyect in development
 ```
-  yarn dev or npm run dev
+  pnpm dev
 ```
 
 ## Contact
