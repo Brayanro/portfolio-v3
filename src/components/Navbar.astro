@@ -132,11 +132,21 @@ const navItems = [
     animation: nav-shadown 1s linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
+    --nav-background: rgb(255 255 255 / 50%);
+  }
+
+  :global(html.dark) nav {
+    --nav-background: rgb(31 41 55 / 90%);
   }
 
   @keyframes nav-shadown {
     to {
-      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
+      background-color: var(--nav-background);
+      backdrop-filter: blur(8px);
+      box-shadow:
+        0 0 0 1px rgb(255 255 255 / 10%),
+        0 10px 15px -3px rgb(0 0 0 / 10%),
+        0 4px 6px -4px rgb(0 0 0 / 10%);
     }
   }
 

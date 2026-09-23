@@ -2,7 +2,8 @@
 import Footer from "@components/Footer.astro";
 import Navbar from "@components/Navbar.astro";
 import ScrollToTop from "@components/ScrollToTop.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
+import "../styles/global.css";
 
 interface Props {
   title: string;
@@ -21,7 +22,7 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title data-i18n="meta.title">{title}</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body>
     <script>
@@ -42,17 +43,6 @@ const { title, description } = Astro.props;
     color-scheme: light dark;
     --icon-color-light: #000;
     --icon-color-dark: #fff;
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
   }
 
   @font-face {
